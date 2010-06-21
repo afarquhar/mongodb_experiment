@@ -1,3 +1,4 @@
+require 'rubygems'
 gem "mongo_ext"
 gem "bson_ext"
 gem "mongoid", "=1.9.0"

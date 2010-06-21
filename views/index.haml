@@ -1,10 +1,13 @@
-%form{:action => '/create', :method => "POST"}
-  %input{:type => 'text'}
-  %input{:type => 'submit'}
+%form{:action => '/create_retailer', :method => "POST"}
+  %input{:type => 'submit', :value => "new retailer"}
 %h2 retailers
 - for retailer in retailers
   .retailer= retailer.name
+  %ul
   - for deal in retailer.deals
-    .deal= deal.name
+    %li.deal= deal.name
+  %form{:action => '/create_deal', :method => "POST"}
+    %input{:type => 'hidden', :name => 'retailer', :value => retailer.id}
+    %input{:type => 'submit', :value => "new deal"}
 
   
